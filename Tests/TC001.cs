@@ -15,7 +15,11 @@ namespace GenericFramework.Tests
         public void Login()
         {
             LoginPage login = new LoginPage(driver);
-            login.ValidLogin();
+            ProductsPage Product=login.ValidLogin("rahulshettyacademy", "learning");
+            Product.waitForProductPage();
+            driver.FindElement(Product.Checkout);
+            TestContext.Progress.WriteLine(Product.Checkout);
+
         }
     }
 }

@@ -44,12 +44,13 @@ namespace GenericFramework.PageObject
 
 
         #region Methods
-        public void ValidLogin()
+        public ProductsPage ValidLogin(String UserInput,String Pass)
         {
-            UserName.SendKeys("rahulshettyacademy");
-            Password.SendKeys("learning");
+            UserName.SendKeys(UserInput);
+            Password.SendKeys(Pass);
             CheckBox.Click();
-            SignIn.Click(); 
+            SignIn.Click();
+            return new ProductsPage(driver);
         }
         #endregion
 
